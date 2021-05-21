@@ -12,7 +12,7 @@
 
     </head>
     <body class="antialiased">
-        <div class="container-fluid">
+        <div class="container">
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <a class="navbar-brand" href="#">Navbar</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,7 +27,7 @@
                       <a class="nav-link" href="{{ route('questions.create') }}">Create</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#">Pricing</a>
+                      <a class="nav-link" href="{{ route('questions.index') }}">All Questions</a>
                     </li>
                     <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -62,8 +62,9 @@
 
                 <a href='#' class="btn btn-primary btn-lg float-right" role="button">Ask Now</a>
               </nav>
-
+              @yield('index')
               @yield('content')
+              @yield('prikaz')
 
     </div>
     </body>

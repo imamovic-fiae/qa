@@ -14,7 +14,10 @@ class QuestionController extends Controller
      */
     public function index()
     {
-        //
+        $questions = Question::orderBy('id','desc')->paginate(5);
+
+        return view('questions.index')->with('questions', $questions);
+
     }
 
     /**
@@ -74,9 +77,9 @@ class QuestionController extends Controller
      */
     public function show($id)
     {
-        $prikaz  = Question::find($id);
+        $prikaz  = Question::findOrFail($id);
 
-        return $prikaz;
+        return view('questions.show')->with('prikaz', $prikaz);
     }
 
     /**
